@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot name="mrbuggy3" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Robot Base -->
+  <link name="base_footprint"/>
+  
+  <link name="base_link">
+    <visual>
+      <origin xyz="-.008 0 -.0202" rpy="0 0 1.5707"/>
+      <geometry>
+        <mesh filename="package://mrbuggy3_description/meshes/mrbuggy3.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.112 -0.10 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.112 0.10 0" rpy="0 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.1135 -0.10 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.1135 0.10 0" rpy="0 0 3.14159"/>
+      <geometry>
+        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="base_laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://mrbuggy3_description/meshes/rplidar.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0.042 0 0.096" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base_laser"/>
+  </joint>
+
+</robot>
