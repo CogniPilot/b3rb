@@ -1,2 +1,2 @@
 # mrbuggy3
-MRBuggy3 common packages.
+MR Buggy3 common packages.
