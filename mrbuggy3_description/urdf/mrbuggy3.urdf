@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <robot name="mrbuggy3" xmlns:xacro="http://ros.org/wiki/xacro">
-
-  <!-- Robot Base -->
-  <link name="base_footprint"/>
-  
+ 
   <link name="base_link">
     <visual>
       <origin xyz="-.008 0 -.0202" rpy="0 0 1.5707"/>
@@ -37,6 +34,8 @@
     </visual>
   </link>
 
+  <link name="base_footprint"/>
+
   <link name="rplidar_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -55,8 +54,8 @@
   </joint>
 
   <joint name="base_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <child link="base_link"/>
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
   </joint>
 
