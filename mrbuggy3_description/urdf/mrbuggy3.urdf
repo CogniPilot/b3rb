@@ -37,7 +37,7 @@
     </visual>
   </link>
 
-  <link name="base_laser">
+  <link name="rplidar_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -46,16 +46,24 @@
     </visual>
   </link>
 
+  <link name="/link/rplidar_link/sensor/rplidar/scan"/>
+
+  <joint name="rplidar_joint2" type="fixed">
+    <parent link="rplidar_link"/>
+    <child link="/link/rplidar_link/sensor/rplidar/scan"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
   </joint>
 
-  <joint name="laser_joint" type="fixed">
+  <joint name="rplidar_joint" type="fixed">
     <origin xyz="0.042 0 0.096" rpy="0 0 0"/>
     <parent link="base_link"/>
-    <child link="base_laser"/>
+    <child link="rplidar_link"/>
   </joint>
 
 </robot>
