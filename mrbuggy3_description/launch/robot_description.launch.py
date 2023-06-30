@@ -36,6 +36,7 @@ def generate_launch_description():
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
             {'robot_description': robot_desc},
         ],
+        arguments=['--ros-args', '--log-level', LaunchConfiguration('log_level')],
         remappings=[
             ('/tf', 'tf'),
             ('/tf_static', 'tf_static')
