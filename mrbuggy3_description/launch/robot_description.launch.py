@@ -11,6 +11,16 @@ from launch.substitutions import Command, PathJoinSubstitution
 from launch.substitutions.launch_configuration import LaunchConfiguration
 from launch_ros.actions import Node
 
+ARGUMENTS = [
+    DeclareLaunchArgument('use_sim_time', default_value='true',
+                          choices=['true', 'false'],
+                          description='Use sim time'),
+    DeclareLaunchArgument('log_level', default_value='error',
+                          choices=['info', 'warn', 'error'],
+                          description='log level'),
+]
+
+
 
 def generate_launch_description():
     pkg_mrbuggy3_description = Path(get_package_share_directory('mrbuggy3_description'))
@@ -32,12 +42,6 @@ def generate_launch_description():
         ]
     )
 
-    # Define LaunchDescription variable
-    ld = LaunchDescription([
-        DeclareLaunchArgument('use_sim_time', default_value='false',
-                              choices=['true', 'false'],
-                              description='use_sim_time')])
-
-    # Add nodes to LaunchDescription
-    ld.add_action(robot_state_publisher)
-    return ld
+    return LaunchDescription(ARGUMENTS + [
+        robot_state_publisher
+    ])
