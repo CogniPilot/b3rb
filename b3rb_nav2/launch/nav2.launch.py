@@ -19,13 +19,13 @@ ARGUMENTS = [
 
 
 def generate_launch_description():
-    pkg_mrbuggy3_nav2 = get_package_share_directory('mrbuggy3_nav2')
+    pkg_b3rb_nav2 = get_package_share_directory('b3rb_nav2')
     pkg_nav2_bringup = get_package_share_directory('nav2_bringup')
 
     nav2_params_arg = DeclareLaunchArgument(
         'params_file',
         default_value=PathJoinSubstitution(
-            [pkg_mrbuggy3_nav2, 'config', 'nav2.yaml']),
+            [pkg_b3rb_nav2, 'config', 'nav2.yaml']),
         description='Nav2 parameters')
 
     namespace_arg = DeclareLaunchArgument(

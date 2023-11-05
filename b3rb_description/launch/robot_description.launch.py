@@ -23,8 +23,8 @@ ARGUMENTS = [
 
 
 def generate_launch_description():
-    pkg_mrbuggy3_description = Path(get_package_share_directory('mrbuggy3_description'))
-    urdf_file = pkg_mrbuggy3_description / 'urdf'/ 'mrbuggy3.urdf'
+    pkg_b3rb_description = Path(get_package_share_directory('b3rb_description'))
+    urdf_file = pkg_b3rb_description / 'urdf'/ 'b3rb.urdf'
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
     robot_state_publisher = Node(

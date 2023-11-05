@@ -26,7 +26,7 @@ ARGUMENTS = [
 
 
 def generate_launch_description():
-    pkg_mrbuggy3_nav2 = get_package_share_directory('mrbuggy3_nav2')
+    pkg_b3rb_nav2 = get_package_share_directory('b3rb_nav2')
 
     namespace = LaunchConfiguration('namespace')
     sync = LaunchConfiguration('sync')
@@ -34,7 +34,7 @@ def generate_launch_description():
     slam_params_arg = DeclareLaunchArgument(
         'params',
         default_value=PathJoinSubstitution(
-            [pkg_mrbuggy3_nav2, 'config', 'slam.yaml']),
+            [pkg_b3rb_nav2, 'config', 'slam.yaml']),
         description='Robot namespace')
 
     slam_params = RewrittenYaml(

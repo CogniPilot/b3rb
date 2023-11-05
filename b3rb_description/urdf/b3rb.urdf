@@ -1,35 +1,35 @@
 <?xml version="1.0"?>
-<robot name="mrbuggy3" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="b3rb" xmlns:xacro="http://ros.org/wiki/xacro">
  
   <link name="base_link">
     <visual>
       <origin xyz="-.008 0 -.0202" rpy="0 0 1.5707"/>
       <geometry>
-        <mesh filename="package://mrbuggy3_description/meshes/mrbuggy3.dae" scale="1 1 1" />
+        <mesh filename="package://b3rb_description/meshes/b3rb.dae" scale="1 1 1" />
       </geometry>
     </visual>
     <visual>
       <origin xyz="0.112 -0.10 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+        <mesh filename="package://b3rb_description/meshes/wheel.dae" scale="1 1 1" />
       </geometry>
     </visual>
     <visual>
       <origin xyz="0.112 0.10 0" rpy="0 0 3.14159"/>
       <geometry>
-        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+        <mesh filename="package://b3rb_description/meshes/wheel.dae" scale="1 1 1" />
       </geometry>
     </visual>
     <visual>
       <origin xyz="-0.1135 -0.10 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+        <mesh filename="package://b3rb_description/meshes/wheel.dae" scale="1 1 1" />
       </geometry>
     </visual>
     <visual>
       <origin xyz="-0.1135 0.10 0" rpy="0 0 3.14159"/>
       <geometry>
-        <mesh filename="package://mrbuggy3_description/meshes/wheel.dae" scale="1 1 1" />
+        <mesh filename="package://b3rb_description/meshes/wheel.dae" scale="1 1 1" />
       </geometry>
     </visual>
   </link>
@@ -40,7 +40,7 @@
     <visual>
       <origin xyz="0 0 -.028" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://mrbuggy3_description/meshes/STL27L.dae" scale="1 1 1" />
+        <mesh filename="package://b3rb_description/meshes/STL27L.dae" scale="1 1 1" />
       </geometry>
     </visual>
   </link>
