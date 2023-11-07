@@ -3,7 +3,7 @@
  
   <link name="base_link">
     <visual>
-      <origin xyz="-.008 0 -.0202" rpy="0 0 1.5707"/>
+      <origin xyz="0.002 0 -0.005" rpy="0 0 -1.5707"/>
       <geometry>
         <mesh filename="package://b3rb_description/meshes/b3rb.dae" scale="1 1 1" />
       </geometry>
@@ -52,7 +52,7 @@
   </joint>
 
   <joint name="lidar_joint" type="fixed">
-    <origin xyz="0.042 0 0.076" rpy="0 0 0"/>
+    <origin xyz="0 0 0.155" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="lidar_link"/>
   </joint>
