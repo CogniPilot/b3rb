@@ -58,7 +58,7 @@ def generate_launch_description():
         Node(package='slam_toolbox',
              executable='sync_slam_toolbox_node',
              name='slam_toolbox',
-             output='screen',
+             output='log',
              parameters=[
                slam_params,
                {'use_sim_time': LaunchConfiguration('use_sim_time')}
@@ -70,7 +70,7 @@ def generate_launch_description():
         Node(package='slam_toolbox',
              executable='async_slam_toolbox_node',
              name='slam_toolbox',
-             output='screen',
+             output='log',
              parameters=[
                slam_params,
                {'use_sim_time': LaunchConfiguration('use_sim_time')}
