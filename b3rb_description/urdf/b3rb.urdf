@@ -35,6 +35,8 @@
   </link>
 
   <link name="base_footprint"/>
+  <link name="camera_link_optical"/>
+  <link name="camera_link"/>
 
   <link name="lidar_link">
     <visual>
@@ -55,6 +57,18 @@
     <origin xyz="0 0 0.155" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="lidar_link"/>
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz=".189 0 .156" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
   </joint>
 
 </robot>
