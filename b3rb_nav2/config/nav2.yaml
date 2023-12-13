@@ -123,7 +123,7 @@ local_costmap:
       width: 3
       height: 3
       resolution: 0.06
-      robot_radius: 0.165
+      robot_radius: 0.25
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -162,7 +162,7 @@ global_costmap:
       global_frame: map
       robot_base_frame: base_link
       use_sim_time: True
-      robot_radius: 0.165
+      robot_radius: 0.25
       resolution: 0.06
       track_unknown_space: true
       plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
@@ -207,7 +207,7 @@ planner_server:
       angle_quantization_bins: 72         # Number of angle bins for search
       analytic_expansion_ratio: 3.5       # The ratio to attempt analytic expansions during search for final approach.
       analytic_expansion_max_length: 3.0  # For Hybrid/Lattice nodes: The maximum length of the analytic expansion to be considered valid to prevent unsafe shortcutting
-      minimum_turning_radius: 0.75         # minimum turning radius in m of path / vehicle
+      minimum_turning_radius: 0.9         # minimum turning radius in m of path / vehicle
       reverse_penalty: 1.3                # Penalty to apply if motion is reversing, must be => 1
       change_penalty: 0.5                 # Penalty to apply if motion is changing directions (L to R), must be >= 0
       non_straight_penalty: 2.0           # Penalty to apply if motion is non-straight, must be => 1
