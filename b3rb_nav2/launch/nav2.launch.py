@@ -15,6 +15,8 @@ ARGUMENTS = [
     DeclareLaunchArgument('log_level', default_value='error',
                           choices=['info', 'warn', 'error'],
                           description='log level'),
+    DeclareLaunchArgument('map_yaml', default_value='',
+                          description='map yaml file'),
 ]
 
 
@@ -42,10 +44,12 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 PathJoinSubstitution(
-                    [pkg_nav2_bringup, 'launch', 'navigation_launch.py'])),
+                    [pkg_nav2_bringup, 'launch', 'bringup_launch.py'])),
             launch_arguments={'use_sim_time': use_sim_time,
                               'use_robot_state_pub': 'False',
                               'use_composition': 'False',
+                              'slam': 'True',
+                              'map': LaunchConfiguration('map_yaml'),
                               'log_level': LaunchConfiguration('log_level'),
                               'params_file': LaunchConfiguration('params_file')}.items()),
     ])
